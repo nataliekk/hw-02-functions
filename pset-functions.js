@@ -30,7 +30,28 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 1:')
 
 // Add your code below this line
+function blackJack(playerCardScore, dealerCardScore) {
+  if (playerCardScore > dealerCardScore || (dealerCardScore > 21 && 21 - playerCardScore > 0)) {
+    console.log(playerCardScore)
+    console.log('player wins')
+  }
+  else if (playerCardScore < dealerCardScore || (playerCardScore > 21 && 21 - dealerCardScore >= 0)) {
+    console.log(dealerCardScore)
+    console.log('dealer win')
+  }
+  else if (playerCardScore === dealerCardScore && playerCardScore > 21 && dealerCardScore > 21) {
+    console.log(0)
+    console.log('bust')
+  }
+  else if (playerCardScore === dealerCardScore && playerCardScore <= 21 && dealerCardScore <= 21){
+    console.log(playerCardScore)
+    console.log('tie')
+    }
+    else {
+    }
+}
 
+blackJack(21, 21)
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -75,6 +96,41 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 2:')
 
 // Add your code below this line
+let score = 0
+let i = 0
+function scrabbleScore(word) {
+  for (i = 0; i < word.length; i++) {
+    if (word.charAt(i) === 'a' || word.charAt(i) === 'e' || word.charAt(i) === 'i' || word.charAt(i) === 'o' || word.charAt(i) === 'u' || word.charAt(i) === 'l' || word.charAt(i) === 'n' || word.charAt(i) === 'r' || word.charAt(i) === 's' || word.charAt(i) === 't') {
+      score = score + 1
+      // console.log('one point')
+    }
+    else if (word.charAt(i) === 'd' || word.charAt(i) === 'g'){
+      score = score + 2
+    }
+    else if (word.charAt(i) === 'b' || word.charAt(i) === 'c' || word.charAt(i) === 'm' || word.charAt(i) === 'p') {
+      score = score + 3
+      // console.log('three')
+    }
+    else if (word.charAt(i) === 'f' || word.charAt(i) === 'h' || word.charAt(i) === 'v' || word.charAt(i) === 'w' || word.charAt(i) === 'y') {
+      score = score + 4
+    }
+    else if (word.charAt(i) === 'k') {
+      score = score + 5
+    }
+    else if (word.charAt(i) === 'j' || word.charAt(i) === 'x') {
+      score = score + 8
+    }
+    else if (word.charAt(i) === 'q' || word.charAt(i) === 'z') {
+      score = score + 10
+    }
+    else {
+
+    }
+  }
+
+}
+scrabbleScore('javascript')
+console.log(score)
 
 // Add your code above this line
 
@@ -114,7 +170,15 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 3:')
 
 // Add your code below this line
+function isPalindrome(word) {
 
+}
+const palindrome = isPalindrome()
+isPalindrome('noon')
+console.log(palindrome)
+//
+// 1. length --> half the lenght of the words
+// 2. check i = length - 1 &&
 // Add your code above this line
 
 /** added for formatting purposes **/
