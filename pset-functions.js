@@ -170,12 +170,58 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 3:')
 
 // Add your code below this line
-function isPalindrome(word) {
 
+// function isPalindrome(word) {
+//   let i = 0
+//   let letters = word.split('')
+//   console.log(letters)
+//   for (let i = 0; i < letters.length; i++) {
+//     let currentLetter = letters[i]
+//     let lastLetter = letters[(letters.length - 1 - i)]
+//     console.log(i)
+//     console.log(letters.length - i)
+//     if (currentLetter === lastLetter) {
+//       return true
+//       console.log(currentLetter)
+//     }
+//     else {
+//       return false
+//       console.log(currentLetter)
+//       console.log(lastLetter)
+//     }
+//   }
+// }
+
+function isPalindrome(word) {
+  let letters = word.split('')
+  let lettersReverse = letters.slice(0).reverse()
+  console.log(lettersReverse)
+  console.log(letters)
+  for (let i = 0; i < letters.length; i++) {
+    if (letters[i] !== lettersReverse[i]) {
+      return false
+    } else {
+      }
+  }
+  return true
 }
-const palindrome = isPalindrome()
-isPalindrome('noon')
+
+// const palindrome = isPalindrome()
+let palindrome = isPalindrome('hello')
 console.log(palindrome)
+
+// figure out how to reverse array. see if array === reversed array
+
+
+function pallyPalindrome(word) {
+  let letters = word.split('')
+  let lettersReverse = letters.reverse()
+  let wordReverse = lettersReverse.join('')
+    return word === wordReverse
+}
+
+console.log(pallyPalindrome('noon'))
+
 //
 // 1. length --> half the lenght of the words
 // 2. check i = length - 1 &&
@@ -211,6 +257,20 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 4:')
 
 // Add your code below this line
+function doubleLetters(word) {
+  let letters = word.slice('')
+  for (let i = 0; i < letters.length; i++) {
+    if (letters[i] === letters[i + 1]) {
+      return true
+    }
+    else {
+    }
+  }
+  return false
+}
+
+let double = doubleLetters('poop')
+console.log(double)
 
 // Add your code above this line
 
@@ -271,6 +331,28 @@ Use the following test cases to confirm your program meets the success criteria
 console.log('Problem 5 - bonus:')
 
 // Add your code below this line
+
+function wordCount(phrase) {
+  let words = phrase.replace(',', '').split(' ')
+  console.log(words)
+  const count = {}
+  words.forEach((word) => {
+    if (count[word] === undefined) {
+      count[word] = 1
+    }
+    else {
+      count[word] = count[word] + 1
+    }
+  })
+  console.log(count)
+}
+
+wordCount("Humpty, Dumpty sat on a wall Humpty Dumpty had a great fall")
+
+// create empty object
+// if string isnt found and doesnt exist in object, add objecg and count of 1
+// if string does exist in object, add count of 1
+
 
 // Add your code above this line
 
